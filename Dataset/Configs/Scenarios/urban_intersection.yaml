@@ -1,0 +1,65 @@
+town: Town03
+
+dataset_config:
+  scenario: "urban_intersection"
+  scenario_abbreviation: "ui"
+
+world:
+  seed: 18 # seed for numpy and random
+  seed_traffic: 4 # seed for traffic
+  weather:
+    mie_scattering_scale: 0.05  # refers to air pollution and how light is influenced by it
+
+scenario:
+  num_vehicles: 6 # Number of vehicles per spawn point range (8 spawn point ranges are used)
+  num_walkers: 60 # Total number of pedestrians spawned
+  rsu_list:
+    - name: rsu1
+      spawn_position: [3.84, 119.13, 6.45, 0.0, 88, -18] # x, y, z, roll, yaw, pitch
+      id: -1
+      wall_facing: False
+      sensing:
+        perception:
+          lidar:
+            upper_fov: -1
+    - name: rsu2
+      spawn_position: [-7.86, 143.43, 6.59, 0.0, -91.9, -10.57] # x, y, z, roll, yaw, pitch
+      id: -2
+      wall_facing: False
+      sensing:
+        perception:
+          lidar:
+            upper_fov: -1
+
+  single_cav_list:
+    - name: cav1
+      spawn_position: [-6.44, 46.45, 0.3, 0, 90.42, 0] # x, y, z, roll, yaw, pitch
+      destination: [64.96, 134.08, 0.3] # x, y, z
+    - name: cav2
+      spawn_position: [90.8, 129.10, 0.3, 0.0, 178.58, 0] # x, y, z, roll, yaw, pitch
+      destination: [-141.34, -96.32, 0.3] # x, y, z
+    - name: cav3
+      spawn_position: [-64.20, 135.71, 0.3, 0.0, -0.85, 0] # x, y, z, roll, yaw, pitch
+      destination: [247.51, -81.3, 0.3] # x, y, z
+
+  traffic_lights:
+    active_light_id: 2
+    active_light_state: "g"  #'y', 'r' or 'g', not case-sensitive. Check TrafficLightManager for further info
+    initial_active_frame_counter: 20
+    distinct_lights:  # used to control a traffic light not in the intersection, but that affects intersection traffic
+      - location: [-63.52, 128.21, 4.15]
+
+vehicle_base:
+  behavior:
+    max_speed: 35
+    tailgate_speed: 40
+  controller:
+    max_throttle: 0.9
+
+blueprint:
+  bp_class_sample_prob:
+    car: 0.52
+    van: 0.16
+    truck: 0.16
+    bicycle: 0.08
+    motorcycle: 0.08

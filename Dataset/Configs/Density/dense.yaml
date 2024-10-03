@@ -1,0 +1,7 @@
+density:
+  vehicle_multiplier: 2.67  # Multiplies "scenario" -> "num_vehicles"
+  walker_multiplier: 2.33  # Multiplies "scenario" -> "num_walkers"
+
+dataset_config:
+  density: "dense"
+  density_abbreviation: "d"

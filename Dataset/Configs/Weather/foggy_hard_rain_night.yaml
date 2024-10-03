@@ -1,0 +1,17 @@
+world:
+  weather:
+    cloudiness: 100
+    fog_density: 100
+    wetness: 100
+    precipitation_deposits: 90
+    fog_distance: 0
+    fog_falloff: 0
+    precipitation: 100
+    wind_intensity: 90
+    sun_altitude_angle: -90
+    rayleigh_scattering_scale: 0.02
+    scattering_intensity: 1
+
+dataset_config:
+  weather: "foggy_hard_rain_night"
+  weather_abbreviation: "fhrn"

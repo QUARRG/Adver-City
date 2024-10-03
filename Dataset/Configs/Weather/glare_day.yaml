@@ -1,0 +1,30 @@
+world:
+  weather:
+    cloudiness: 0
+    fog_density: 8
+    wetness: 0
+    precipitation_deposits: 0
+    fog_distance: 0.75
+    fog_falloff: 0.2
+    precipitation: 0
+    wind_intensity: 0
+    sun_altitude_angle: 20  # ScenarioManager uses this value before override happens, so a dummy value must be used
+    sun_altitude_angle_scenarios:  # Angles set to the lowest possible value that does not occlude sun from ego view
+      ui: 8
+      unj: 5
+      ri: 10
+      rsnj: 11
+      rcnj: 22
+    rayleigh_scattering_scale: 0.02
+    scattering_intensity: 1
+    sun_azimuth_angle:  # Azimuth set so that sunlight hits straight onto ego's path
+      ui: 271
+      unj: 1.3  # Decimal value due to ego's lane change
+      ri: 90
+      rsnj: 90
+      rcnj: 100
+    mie_scattering_scale: 0
+
+dataset_config:
+  weather: "glare_day"
+  weather_abbreviation: "gd"

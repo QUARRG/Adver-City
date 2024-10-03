@@ -1,0 +1,63 @@
+town: Town07
+
+dataset_config:
+  scenario: "rural_straight_non_junction"
+  scenario_abbreviation: "rsnj"
+
+world:
+  seed: 13 # seed for numpy and random
+  seed_traffic: 5 # seed for traffic
+  weather:
+    mie_scattering_scale: 0  # refers to air pollution and how light is influenced by it
+
+scenario:
+  num_vehicles: 2 # Number of vehicles per spawn point range (8 spawn point ranges are used)
+  num_walkers: 0 # Total number of pedestrians spawned (no sidewalks around this path)
+  spawning_distance: 25 # Radius around POV agents that spawning points will be created
+  spawning_distance_to_path: 10 # Area around path taken by CAVs where spawning points will be created
+  rsu_list:
+    - name: rsu1
+      spawn_position: [-205.05, -131.85, 5.5, 0.0, 270, -25] # x, y, z, roll, yaw, pitch
+      sensing:
+        perception:
+          lidar:
+            upper_fov: -1
+      id: -1
+      wall_facing: True # This RSU doesn't face a wall, but it faces a grassy area with no relevant traffic info
+    - name: rsu2
+      spawn_position: [-193.24, -153.47, 7.84, 0.0, 265.78, -10.03] # x, y, z, roll, yaw, pitch
+      sensing:
+        perception:
+          lidar:
+            upper_fov: -1
+      id: -2
+      wall_facing: False
+
+  single_cav_list:
+    - name: cav1
+      spawn_position: [-198.87, -26.48, 0.3, 0.0, -88.63, 0] #[-198.29, -38.64, 0.3, 0, -88.55, 0] # x, y, z, roll, yaw, pitch
+      destination: [-198.09, -223.93, 0.3] # x, y, z
+    - name: cav2
+      spawn_position: [-200.82, -233.92, 0.3, 0.0, 101.89, 0] # x, y, z, roll, yaw, pitch
+      destination: [-203, 91.02, 0.2] # x, y, z
+    - name: cav3
+      spawn_position: [-198.12, -95.38, 0.15, 0.0, -90.66, 0] # [-198.32, -87.81, 0.15, 0.0, -90.66, 0] # x, y, z, roll, yaw, pitch
+      destination: [-45.52, -242.71, 2.8] # x, y, z
+
+  traffic_lights:
+    active_light_id: 0
+    active_light_state: "g"  #'y', 'r' or 'g', not case-sensitive. Check TrafficLightManager for further info
+    initial_active_frame_counter: 0
+
+vehicle_base:
+  controller:
+    max_throttle: 0.9
+
+blueprint:
+  bp_meta_path: "blueprints_rural.json"
+  bp_class_sample_prob:
+    car: 0.52
+    van: 0.18
+    truck: 0.14
+    bicycle: 0.08
+    motorcycle: 0.08

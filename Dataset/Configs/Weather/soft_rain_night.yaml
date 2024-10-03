@@ -1,0 +1,17 @@
+world:
+  weather:
+    cloudiness: 70
+    fog_density: 7
+    wetness: 90
+    precipitation_deposits: 25
+    fog_distance: 0.75
+    fog_falloff: 0.1
+    precipitation: 30
+    wind_intensity: 30
+    sun_altitude_angle: -90
+    rayleigh_scattering_scale: 0.02
+    scattering_intensity: 1
+
+dataset_config:
+  weather: "soft_rain_night"
+  weather_abbreviation: "srn"

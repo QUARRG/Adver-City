@@ -1,0 +1,58 @@
+town: Town07
+
+dataset_config:
+  scenario: "rural_curved_non_junction"
+  scenario_abbreviation: "rcnj"
+
+world:
+  seed: 4 # seed for numpy and random
+  seed_traffic: 1 # seed for traffic
+  weather:
+    mie_scattering_scale: 0  # refers to air pollution and how light is influenced by it
+
+scenario:
+  num_vehicles: 2.67 # Number of vehicles per spawn point range (8 spawn point ranges are used)
+  num_walkers: 0 # Total number of pedestrians spawned -> Walkers do not spawn in this path
+  spawning_distance: 20 # Radius around POV agents that spawning points will be created
+  spawning_distance_to_path: 5 # Area around path taken by CAVs where spawning points will be created
+  rsu_list:
+    - name: rsu1
+      spawn_position: [46.97, -145.36, 9.61, -0.0, -121.71, -5] # x, y, z, roll, yaw, pitch
+      id: -1
+      wall_facing: True # This RSU doesn't face a wall, but it faces a grassy area with no relevant traffic info
+    - name: rsu2
+      spawn_position: [52.58, -77.76, 7.57, 0.0, 6, -5] # x, y, z, roll, yaw, pitch
+      id: -2
+      wall_facing: True # This RSU doesn't face a wall, but it faces a grassy area with no relevant traffic info
+
+  single_cav_list:
+    - name: cav1
+      spawn_position: [73.27, -9.18, 0.2, 0, -62.7, 0] # x, y, z, roll, yaw, pitch
+      destination: [30.18, -232.8, 1.58] # x, y, z
+    - name: cav2
+      spawn_position: [59.5, -57.88, 4.27, -0.0, -98.43, 5] # x, y, z, roll, yaw, pitch
+      destination: [-201.61, -138.22, 0.15] # x, y, z
+    - name: cav3
+      spawn_position: [17.63, -235.56, 0.7, 0.0, 24, 5] # x, y, z, roll, yaw, pitch
+      destination: [69.49, 80.08, 0.15] # x, y, z
+
+  traffic_lights:
+    lead_cav_id: 1  # Vehicle that will approach the relevant traffic light and activate it
+    active_light_id: 0
+    active_light_state: "g"  #'y', 'r' or 'g', not case-sensitive. Check TrafficLightManager for further info
+    initial_active_frame_counter: 0
+    times:
+      green: 5000 # Effectively keeps it always green for the duration of the scenario
+
+blueprint:
+  bp_meta_path: "blueprints_rural.json"
+  bp_class_sample_prob:
+    car: 0.52
+    van: 0.18
+    truck: 0.14
+    bicycle: 0.08
+    motorcycle: 0.08
+
+vehicle_base:
+  behavior:
+    collision_time_ahead: 1.5 # used for collision checking

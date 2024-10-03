@@ -1,0 +1,17 @@
+world:
+  weather:
+    cloudiness: 3
+    fog_density: 2
+    wetness: 0
+    precipitation_deposits: 0
+    fog_distance: 0.75
+    fog_falloff: 0.1
+    precipitation: 0
+    wind_intensity: 10
+    sun_altitude_angle: -90
+    rayleigh_scattering_scale: 0.02
+    scattering_intensity: 1
+
+dataset_config:
+  weather: "clear_night"
+  weather_abbreviation: "cn"

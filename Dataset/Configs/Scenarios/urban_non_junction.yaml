@@ -1,0 +1,60 @@
+town: Town03
+
+dataset_config:
+  scenario: "urban_non_junction"
+  scenario_abbreviation: "unj"
+
+world:
+  seed: 10 # seed for numpy and random
+  seed_traffic: 2 # seed for traffic
+  weather:
+    mie_scattering_scale: 0.05  # refers to air pollution and how light is influenced by it
+
+scenario:
+  num_vehicles: 5 # Number of vehicles per spawn point range (8 spawn point ranges are used)
+  num_walkers: 60 # Total number of pedestrians spawned
+  spawning_distance_to_path: 8 # Area around path taken by CAVs where spawning points will be created
+  rsu_list:
+    - name: rsu1
+      spawn_position: [140.61, -12.2, 8.61, 0, 41.2, -15] # x, y, z, roll, yaw, pitch
+      id: -1
+      wall_facing: True
+      sensing:
+        perception:
+          lidar:
+            upper_fov: -1
+    - name: rsu2
+      spawn_position: [166.88, -11.62, 8, 0, 90, -25] # x, y, z, roll, yaw, pitch
+      id: -2
+      wall_facing: True
+      sensing:
+        perception:
+          lidar:
+            upper_fov: -1
+
+  single_cav_list:
+    - name: cav1
+      spawn_position: [218.69, -5.03, 0.3, 0, -178.78, 0] # x, y, z, roll, yaw, pitch
+      destination: [67.61, -3.66, 0.3] # x, y, z
+      behavior:
+        overtake_allowed: true # whether overtake allowed, typically false for platoon leader
+        overtake_counter_recover: 1 # the vehicle can not do another overtake during next certain steps
+    - name: cav2
+      spawn_position: [102.80, 4.60, 0.3, 0, -1, 0] # x, y, z, roll, yaw, pitch
+      destination: [28.62, 196.98, 0.1] # x, y, z
+    - name: cav3
+      spawn_position: [199.78, -1.83, 0.3, 0, 180, 0] # x, y, z, roll, yaw, pitch
+      destination: [-131.64, -3.34, 0.3] # x, y, z
+
+  traffic_lights:
+    active_light_id: 0
+    active_light_state: "g"  #'y', 'r' or 'g', not case-sensitive. Check TrafficLightManager for further info
+    initial_active_frame_counter: 0
+
+blueprint:
+  bp_class_sample_prob:
+    car: 0.52
+    van: 0.20
+    truck: 0.08
+    bicycle: 0.10
+    motorcycle: 0.10
