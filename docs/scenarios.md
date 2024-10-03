@@ -163,3 +163,9 @@ dataset_config:
 * The walker multiplier used is smaller than the vehicle multiplier because pedestrians have a smaller area within the
 map that they can be spawned at. Therefore, we can use a smaller number of pedestrians than vehicles and have the
 sidewalks just as crowded as the roads.
+
+## Other tutorials
+
+* [Overview](overview.md)
+* [Data structure](data_structure.md)
+* [Annotations](annotations.md)
