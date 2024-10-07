@@ -23,7 +23,6 @@ scenario:
           lidar:
             upper_fov: -1
       id: -1
-      wall_facing: True # This RSU doesn't face a wall, but it faces a grassy area with no relevant traffic info
     - name: rsu2
       spawn_position: [-193.24, -153.47, 7.84, 0.0, 265.78, -10.03] # x, y, z, roll, yaw, pitch
       sensing:
@@ -31,7 +30,6 @@ scenario:
           lidar:
             upper_fov: -1
       id: -2
-      wall_facing: False
 
   single_cav_list:
     - name: cav1

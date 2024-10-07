@@ -18,7 +18,6 @@ scenario:
     - name: rsu1
       spawn_position: [140.61, -12.2, 8.61, 0, 41.2, -15] # x, y, z, roll, yaw, pitch
       id: -1
-      wall_facing: True
       sensing:
         perception:
           lidar:
@@ -26,7 +25,6 @@ scenario:
     - name: rsu2
       spawn_position: [166.88, -11.62, 8, 0, 90, -25] # x, y, z, roll, yaw, pitch
       id: -2
-      wall_facing: True
       sensing:
         perception:
           lidar:

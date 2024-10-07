@@ -19,11 +19,9 @@ scenario:
     - name: rsu1
       spawn_position: [46.97, -145.36, 9.61, -0.0, -121.71, -5] # x, y, z, roll, yaw, pitch
       id: -1
-      wall_facing: True # This RSU doesn't face a wall, but it faces a grassy area with no relevant traffic info
     - name: rsu2
       spawn_position: [52.58, -77.76, 7.57, 0.0, 6, -5] # x, y, z, roll, yaw, pitch
       id: -2
-      wall_facing: True # This RSU doesn't face a wall, but it faces a grassy area with no relevant traffic info
 
   single_cav_list:
     - name: cav1
