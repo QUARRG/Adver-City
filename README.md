@@ -24,7 +24,7 @@ will soon be available on [Arxiv](https://arxiv.org/).
 > conditions of CP models. Benchmarks run on the dataset show that weather conditions created challenging conditions 
 > for perception models, reducing multi-modal object detection performance by up to 19%, while object density 
 > affected LiDAR-based detection by up to 29%. The dataset, code and documentation are available at 
-> https://github.com/QUARRG/Adver-City. 
+> https://labs.cs.queensu.ca/quarrg/datasets/adver-city/. 
 
 
 
@@ -33,7 +33,7 @@ will soon be available on [Arxiv](https://arxiv.org/).
 
 ## Data
 
-The Adver-City dataset may be downloaded from [OneDrive](https://queensuca-my.sharepoint.com/:f:/g/personal/22rmb5_queensu_ca/Eiqz-W0fDSdBo0OkQBt2cLEBlAHQm417iVcVmzUMXNpdvw?e=QmNyhN). Check the 
+The Adver-City dataset may be downloaded from its [official website](https://labs.cs.queensu.ca/quarrg/datasets/adver-city/). Check the 
 [Data structure](docs/data_structure.md) documentation for details on how the dataset files are organized.
 
 ## Annotations
