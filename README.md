@@ -131,7 +131,8 @@ If this work is helpful for your research, please cite the following BibTeX entr
 @article{Karvat_2024_AdverCity,
   title = {Adver-City: Open-Source Multi-Modal Dataset for Collaborative Perception Under Adverse Weather Conditions},
   author = {Karvat, Mateus and Givigi, Sidney},
-  journal = {arXiv preprint arXiv:},
+  journal = {arXiv preprint arXiv:2410.06380},
+  note = {Available at https://arxiv.org/abs/2410.06380},
   year = {2024}
 }
 ```
