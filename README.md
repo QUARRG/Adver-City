@@ -7,7 +7,7 @@ The first open-source synthetic dataset for collaborative perception focused on 
 ### Paper 
 
 Our paper "Adver-City: Open-Source Multi-Modal Dataset for Collaborative Perception Under Adverse Weather Conditions" 
-will soon be available on [Arxiv](https://arxiv.org/).
+is available on [Arxiv](https://arxiv.org/abs/2410.06380).
 
 ### Abstract
 
