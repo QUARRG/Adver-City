@@ -42,7 +42,7 @@ class RevampedVehicleManager(VehicleManager):
         self.localizer = LocalizationManager(vehicle, sensing_config['localization'], carla_map)
         self.perception_manager = RevampedPerceptionManager(vehicle, sensing_config['perception'], cav_world)
         self.map_manager = MapManager(vehicle, carla_map, map_config)
-        self.safety_manager = SafetyManager(vehicle=vehicle, params=config_yaml['safety_manager'])
+        self.safety_manager = SafetyManager(cav_world=cav_world, vehicle=vehicle, params=config_yaml['safety_manager'])
         self.agent = RevampedBehaviorAgent(vehicle, carla_map, behavior_config)
         self.controller = ControlManager(control_config)
         self.data_dumper = RevampedDataDumper(self.perception_manager, vehicle.id, current_time, save_path, bp_meta)
