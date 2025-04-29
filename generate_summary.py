@@ -51,8 +51,7 @@ def generate_summary(path):
         "time_of_day": time_of_day,
         "density": data_protocol["dataset_config"]["density"],
         "num_frames": len(yaml_frames),
-        "num_vehicles": round(data_protocol["scenario"]["num_vehicles"] * num_spawn_points *
-                              data_protocol["density"]["vehicle_multiplier"]),
+        "num_vehicles": round(data_protocol["scenario"]["num_vehicles"] * data_protocol["density"]["vehicle_multiplier"]) * num_spawn_points,
         "num_walkers": round(data_protocol["scenario"]["num_walkers"] * data_protocol["density"]["walker_multiplier"])
     }
 
